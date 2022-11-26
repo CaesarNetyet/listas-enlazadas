@@ -21,6 +21,7 @@ namespace ListasEnlazadas
             list.AgregarFinal("Adiu");
             
             list.MostrarAscendente();
+            list.Buscar("Perro");
             list.Eliminar("Perro");
             list.MostrarAscendente();
             list.Buscar("Perro");

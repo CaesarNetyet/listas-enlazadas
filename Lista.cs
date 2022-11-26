@@ -17,6 +17,12 @@ namespace ListasEnlazadas
             end = null;
         }
 
+        public void AgregarOrdenado()
+        {
+            //agregar alfabeticamente correcto 
+            
+        }
+
         public void AgregarFinal(string valor)
 
         {
@@ -44,44 +50,44 @@ namespace ListasEnlazadas
         }
         public void MostrarAscendente()
         {
+            
+            Nodo actual = first;
+            while (actual != null)
             {
-                Nodo actual = first;
-                while (actual != null)
-                {
-                    Console.WriteLine(actual.valor);
-                    actual = actual.siguiente;
-                }
+                Console.WriteLine(actual.valor);
+                actual = actual.siguiente;
             }
+            
         }
         public void MostrarDescendente()
         {
+            
             {
+                Nodo actual = end;
+                while (actual != null)
                 {
-                    Nodo actual = end;
-                    while (actual != null)
-                    {
-                        Console.WriteLine(actual.valor);
-                        actual = actual.anterior;
-                    }
+                    Console.WriteLine(actual.valor);
+                    actual = actual.anterior;
                 }
             }
+            
         }
 
         public void Buscar(string valor)
         {
+            
+            Nodo actual = first;
+            while (actual != null)
             {
-                Nodo actual = first;
-                while (actual != null)
+                if (actual.valor == valor)
                 {
-                    if (actual.valor == valor)
-                    {
-                        Console.WriteLine("El valor " + valor + " se encuentra en la lista");
-                        return;
-                    }
-                    actual = actual.siguiente;
+                    Console.WriteLine("El valor " + valor + " se encuentra en la lista");
+                    return;
                 }
-                Console.WriteLine("El valor " +  valor + " no se encuentra en la lista");
+                actual = actual.siguiente;
             }
+            Console.WriteLine("El valor " +  valor + " no se encuentra en la lista");
+            
 
         }
 
@@ -91,11 +97,11 @@ namespace ListasEnlazadas
             Nodo Actual = first;
             while (Actual != null)
             {
-                {
+                
                 Actual = Actual.siguiente;
                 Actual.anterior = null;
                 first = Actual;
-            }
+            
             }
         }
 
