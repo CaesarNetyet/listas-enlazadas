@@ -13,20 +13,18 @@ namespace ListasEnlazadas
             Console.WriteLine("Escoge  una opcion");
             Console.WriteLine("1) ");
 
-
-            list.AgregarInicio("Hola");
-            list.AgregarFinal("Perro");
-            list.AgregarFinal("Como");
-            list.AgregarFinal("Estas");
-            list.AgregarFinal("Adiu");
+            list.AgregarOrdenado("Estas");
+            list.AgregarOrdenado("Hola");
+            list.AgregarOrdenado("Como");
+            list.AgregarOrdenado("Perro");
+            list.AgregarOrdenado("Adiu");
             
             list.MostrarAscendente();
             list.Buscar("Perro");
             list.Eliminar("Perro");
             list.MostrarAscendente();
             list.Buscar("Perro");
-
-
+            
         }
         
     }

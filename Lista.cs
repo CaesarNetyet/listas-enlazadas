@@ -17,9 +17,34 @@ namespace ListasEnlazadas
             end = null;
         }
 
-        public void AgregarOrdenado()
+        public void AgregarOrdenado(string valor)
         {
-            //agregar alfabeticamente correcto 
+            Nodo nuevo = new(valor);
+            if (first == null)
+            {
+                first = end = nuevo;
+                return;
+            }
+            if (first.valor.CompareTo(valor) > 0)
+            {
+                nuevo.siguiente = first;
+                first = nuevo;
+                return;
+            }
+            Nodo actual = first;
+            while (actual.siguiente != null)
+            {
+                if (actual.siguiente.valor.CompareTo(valor) > 0)
+                {
+                    nuevo.siguiente = actual.siguiente;
+                    actual.siguiente = nuevo;
+                    return;
+                }
+                actual = actual.siguiente;
+                
+                
+           
+            }
             
         }
 
@@ -139,7 +164,6 @@ namespace ListasEnlazadas
 
                 siguiente.anterior = anterior;
 
-                valor = null;
             }
         }
     }
