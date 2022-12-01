@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
-
+﻿
 namespace ListasEnlazadas
 {
     internal class Program
@@ -22,7 +20,7 @@ namespace ListasEnlazadas
             list.MostrarAscendente();
             list.Buscar("Perro");
             list.Eliminar("Perro");
-            list.MostrarAscendente();
+            list.MostrarDescendente();
             list.Buscar("Perro");
             
         }

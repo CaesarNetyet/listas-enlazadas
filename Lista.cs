@@ -19,33 +19,44 @@ namespace ListasEnlazadas
 
         public void AgregarOrdenado(string valor)
         {
+
             Nodo nuevo = new(valor);
             if (first == null)
+
             {
                 first = end = nuevo;
                 return;
             }
+
             if (first.valor.CompareTo(valor) > 0)
             {
                 nuevo.siguiente = first;
+                first.anterior = nuevo;
                 first = nuevo;
                 return;
             }
+            
             Nodo actual = first;
             while (actual.siguiente != null)
+                
             {
                 if (actual.siguiente.valor.CompareTo(valor) > 0)
                 {
+                    
                     nuevo.siguiente = actual.siguiente;
+                    actual.siguiente.anterior = nuevo;
+                    nuevo.anterior = actual;
                     actual.siguiente = nuevo;
                     return;
                 }
                 actual = actual.siguiente;
                 
-                
-           
             }
-            
+            end.siguiente = nuevo;
+            nuevo.anterior = end;
+            end = nuevo;
+
+
         }
 
         public void AgregarFinal(string valor)
